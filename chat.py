@@ -7,10 +7,10 @@ import time
 import copy
 
 if not firebase_admin._apps:
-    # Make a copy of the secrets dict
-    firebase_config = copy.deepcopy(st.secrets["firebase"])
+    # Convert Streamlit secrets to a normal dict
+    firebase_config = dict(st.secrets["firebase"])
     
-    # Fix the private key line breaks in the copy
+    # Fix the private key line breaks
     firebase_config["private_key"] = firebase_config["private_key"].replace("\\n", "\n")
     
     # Initialize Firebase
@@ -262,6 +262,7 @@ st.markdown(
             f'<div style="text-align: center; color: grey;">&copy; 2025 Sakib Hossain Tahmid. All Rights Reserved.</div>',
             unsafe_allow_html=True
            ) 
+
 
 
 
