@@ -5,6 +5,11 @@ from firebase_admin import credentials, firestore
 from datetime import datetime
 import time
 import copy
+from streamlit_autorefresh import st_autorefresh
+
+# Auto-refresh the app every 3 seconds
+st_autorefresh(interval=3000, key="chat_refresh")
+
 
 if not firebase_admin._apps:
     # Convert Streamlit secrets to a normal dict
@@ -262,6 +267,7 @@ st.markdown(
             f'<div style="text-align: center; color: grey;">&copy; 2025 Sakib Hossain Tahmid. All Rights Reserved.</div>',
             unsafe_allow_html=True
            ) 
+
 
 
 
