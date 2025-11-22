@@ -70,7 +70,7 @@ def get_messages():
     return [d.to_dict() for d in docs]
 
 # ---------------------- STREAMLIT CONFIG ----------------------
-st.set_page_config(page_title="Chat App", layout="wide",page_icon="💬")
+st.set_page_config(page_title="Chat App", layout="wide",page_icon="App_icon.png")
 
 
 hide_st_style = """
@@ -267,6 +267,7 @@ st.markdown(
             f'<div style="text-align: center; color: grey;">&copy; 2025 Sakib Hossain Tahmid. All Rights Reserved.</div>',
             unsafe_allow_html=True
            ) 
+
 
 
 
